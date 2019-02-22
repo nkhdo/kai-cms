@@ -1,6 +1,8 @@
 const fastify = require('fastify')({ logger: true });
 
-fastify.get('/', async () => ({ hello: 'world' }));
+const apiRoutes = require('./routes/api');
+
+fastify.register(apiRoutes, { prefix: '/api' });
 
 const start = async () => {
   try {
