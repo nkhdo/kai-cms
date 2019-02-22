@@ -1,5 +1,8 @@
 require('dotenv-safe').config();
 const fastify = require('fastify')({ logger: true });
+
+fastify.register(require('fastify-helmet'));
+fastify.register(require('fastify-sensible'));
 fastify.register(require('fastify-mongodb'), {
   forceClose: true,
   url: process.env.MONGO_URL,
