@@ -9,7 +9,9 @@
     "dev": "nodemon src/index.js"
   },
   "dependencies": {
-    "fastify": "^1.14.1"
+    "dotenv-safe": "^6.1.0",
+    "fastify": "^1.14.1",
+    "fastify-mongodb": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "^5.14.1",
