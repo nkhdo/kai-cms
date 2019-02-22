@@ -1,0 +1,16 @@
+{
+  "name": "kai-cms-server",
+  "version": "1.0.0",
+  "description": "KaiCMS server",
+  "main": "src/index.js",
+  "author": "Kai Do <me@kaid.sh>",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^1.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
