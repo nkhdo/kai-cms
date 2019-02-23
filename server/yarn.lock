@@ -911,15 +911,7 @@ fastify-helmet@^3.0.0:
     referrer-policy "^1.1.0"
     x-xss-protection "^1.1.0"
 
-fastify-mongodb@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/fastify-mongodb/-/fastify-mongodb-1.0.1.tgz#a847608949a5138e16e5b406129780fab48c5afd"
-  integrity sha512-zBjSgj7tTR0MAuigjyzdpiAswW1Q7+UmyeF+1nznwHLqsqlee+67aRpZbnJ4TWP2X21BzePWNVdvDyEhdKomjA==
-  dependencies:
-    fastify-plugin "^1.0.1"
-    mongodb "^3.1.8"
-
-fastify-plugin@^1.0.1, fastify-plugin@^1.2.1, fastify-plugin@^1.3.0:
+fastify-plugin@^1.2.1, fastify-plugin@^1.3.0, fastify-plugin@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-1.5.0.tgz#4bea12c54112f4749c17f3a1f17356cbdfa661af"
   integrity sha512-bXKSTR4Q1lxERf1p/10Aakga570XtcxCCvPR1gby5js1XOtg7E8UV+aHHEPbGowQGV/KVb7ARBROhPk2I4DfBw==
@@ -1815,7 +1807,7 @@ mongodb-core@3.1.11:
   optionalDependencies:
     saslprep "^1.0.0"
 
-mongodb@^3.1.13, mongodb@^3.1.8:
+mongodb@^3.1.13:
   version "3.1.13"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.1.13.tgz#f8cdcbb36ad7a08b570bd1271c8525753f75f9f4"
   integrity sha512-sz2dhvBZQWf3LRNDhbd30KHVzdjZx9IKC0L+kSZ/gzYquCF5zPOgGqRz6sSCqYZtKP2ekB4nfLxhGtzGHnIKxA==
