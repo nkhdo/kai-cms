@@ -6,19 +6,21 @@
   "author": "Kai Do <me@kaid.sh>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js | pino-colada"
   },
   "dependencies": {
     "dotenv-safe": "^6.1.0",
     "fastify": "^1.14.1",
     "fastify-helmet": "^3.0.0",
     "fastify-mongodb": "^1.0.1",
-    "fastify-sensible": "^1.0.0"
+    "fastify-sensible": "^1.0.0",
+    "mongodb": "^3.1.13"
   },
   "devDependencies": {
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "pino-colada": "^1.4.4"
   }
 }
