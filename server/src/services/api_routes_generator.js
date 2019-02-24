@@ -1,4 +1,5 @@
 const generateModelRoutes = ({ name, slug, schema }) => async (fastify, opts, next) => {
+  fastify.log.info(`Registering routes for ${name}`);
   const collection = fastify.db.collection(slug);
   fastify.get('/', async () => {
     const recordsCursor = await collection.find();
@@ -56,7 +57,6 @@ module.exports = async (db) => {
         prefix: `/${model.slug}`,
       });
     });
-    fastify.get('/', async () => ({ message: 'Hello world' }));
     next();
   };
 };
