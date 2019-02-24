@@ -7,6 +7,7 @@ module.exports = {
     type: 'string',
     required: true,
     unique: true,
+    blacklist: ['_models'],
   },
   description: {
     type: 'string',
