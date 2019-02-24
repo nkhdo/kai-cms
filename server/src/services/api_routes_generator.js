@@ -49,7 +49,7 @@ const generateModelRoutes = ({ name, slug, schema }) => async (fastify, opts, ne
 };
 
 module.exports = async (db) => {
-  const modelsCollection = db.collection('models');
+  const modelsCollection = db.collection('_models');
   const models = await modelsCollection.find().toArray();
   return (fastify, opts, next) => {
     models.forEach((model) => {

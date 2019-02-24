@@ -1,7 +1,7 @@
-const schema = require('../schemas/model');
+const schema = require('../schemas/_model');
 
 module.exports = (fastify, opts, next) => {
-  const collection = fastify.db.collection('models');
+  const collection = fastify.db.collection('_models');
   fastify.get('/', async () => {
     const models = await collection.find();
     return models.toArray();
