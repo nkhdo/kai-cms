@@ -6,6 +6,7 @@ fastify.register(require('fastify-sensible'));
 const mongoPlugin = require('./plugins/mongo');
 const kaiPlugin = require('./plugins/kai');
 const apiRoutesGenerator = require('./services/api_routes_generator');
+const modelsRoutes = require('./routes/models');
 
 const start = async () => {
   try {
@@ -17,6 +18,9 @@ const start = async () => {
       db,
     });
     fastify.register(kaiPlugin);
+    fastify.register(modelsRoutes, {
+      prefix: '/models',
+    });
     const apiRoutes = await apiRoutesGenerator(db);
     fastify.register(apiRoutes, {
       prefix: '/api',

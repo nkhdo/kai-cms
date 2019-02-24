@@ -12,8 +12,11 @@ const buildObjectId = (id, fastify) => {
 
 const buildRecordParams = (params, schema, fastify) => {
   const built = {};
-  _.forEach(schema, ({ type, required }, key) => {
-    const value = params[key];
+  _.forEach(schema, ({ type, required, defaultValue }, key) => {
+    let value = params[key];
+    if (_.isNil(value) && !_.isNil(defaultValue)) {
+      value = defaultValue;
+    }
     if (required && _.isNil(value)) {
       throw fastify.httpErrors.badRequest(`Missing required field: ${key}`);
     }

@@ -8,6 +8,10 @@ module.exports = {
     required: true,
     unique: true,
   },
+  description: {
+    type: 'string',
+    defaultValue: '',
+  },
   schema: {
     type: 'object',
     required: true,
