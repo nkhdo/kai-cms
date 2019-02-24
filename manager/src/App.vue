@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import Sidebar from '@/components/Sidebar.vue';
 
 export default {
@@ -22,6 +23,12 @@ export default {
   components: {
     Sidebar,
   },
+  methods: {
+    ...mapActions('models', ['fetchModels'])
+  },
+  mounted () {
+    this.fetchModels();
+  }
 };
 </script>
 

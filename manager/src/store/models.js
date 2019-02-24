@@ -1,4 +1,5 @@
 import axios from 'axios';
+console.log(process.env)
 
 const http = axios.create({
   baseURL: `${process.env.VUE_APP_BASE_SERVER_URL}/models`,
