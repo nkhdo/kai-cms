@@ -50,6 +50,10 @@ html, body, #app {
     flex: 1;
     display: flex;
     flex-direction: column;
+    &-menu {
+      padding: 5px 10px;
+      border-bottom: 1px solid #f0f0f0;
+    }
     &-container {
       flex: 1;
       overflow: auto;

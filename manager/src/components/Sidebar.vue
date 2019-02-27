@@ -1,28 +1,46 @@
 <template>
   <div class="kd-sidebar">
     <div class="kd-sidebar-header">
-      <vs-avatar text="KaiCMS"/> KaiCMS
+      KaiCMS
     </div>
     <div class="kd-sidebar-body">
-      <vs-list>
-        <vs-list-header icon="supervisor_account" title="Group 1"></vs-list-header>
-        <vs-list-item icon="check" title="Snickerdoodle" subtitle="An excellent companion"></vs-list-item>
-        <vs-list-item icon="check" title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals"></vs-list-item>
-        <vs-list-header icon="how_to_reg" title="Group 2" color="success"></vs-list-header>
-        <vs-list-item icon="verified_user" title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot."></vs-list-item>
-        <vs-list-item icon="verified_user" title="Veronika Ossi" subtitle="Has not watched anything recently"></vs-list-item>
-      </vs-list>
+      <vs-collapse type="margin">
+        <vs-collapse-item>
+          <div slot="header" class="kd-section-header">
+            <vs-icon icon="folder"/> Models
+          </div>
+          <router-link
+            v-for="model in models"
+            :key="model.slug"
+            tag="div"
+            class="kd-section-item"
+            :to="{ name: 'ModelDetails', params: { slug: model.slug }}">
+            {{model.name}}
+          </router-link>
+        </vs-collapse-item>
+        <vs-collapse-item>
+          <div slot="header" class="kd-section-header">
+            <vs-icon icon="note"/> Records
+          </div>
+          Hihi
+        </vs-collapse-item>
+      </vs-collapse>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Sidebar',
+  computed: {
+    ...mapState('models', ['models']),
+  },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .kd-sidebar {
   width: 100%;
   height: 100%;
@@ -30,10 +48,24 @@ export default {
   flex-direction: column;
   &-header {
     padding: 5px 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #f0f0f0;
   }
   &-body {
     flex: 1;
     overflow: auto;
+    .kd-section-header {
+      font-weight: 600;
+    }
+    .kd-section-item {
+      padding: 5px 10px;
+      &:hover {
+        background-color: #fbfbfb;
+      }
+      &.router-link-active {
+        font-weight: 600;
+      }
+    }
   }
 }
 </style>

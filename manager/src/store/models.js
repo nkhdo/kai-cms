@@ -1,13 +1,18 @@
 import axios from 'axios';
+import _ from 'lodash';
 
 const http = axios.create({
-  baseURL: `${process.env.VUE_APP_BASE_SERVER_URL}/models`,
+  baseURL: process.env.VUE_APP_BASE_SERVER_URL,
 });
 
 export const SET_MODELS = 'SET_MODELS';
 
 const state = {
   models: [],
+};
+
+const getters = {
+  getModelBySlug: state => slug => _.find(state.models, { slug }),
 };
 
 const mutations = {
@@ -18,7 +23,7 @@ const mutations = {
 
 const actions = {
   async fetchModels({ commit }) {
-    const models = await http.get('/');
+    const { data: models } = await http.get('/models');
     commit(SET_MODELS, models);
   },
 };
@@ -26,6 +31,7 @@ const actions = {
 export default {
   namespaced: true,
   state,
+  getters,
   mutations,
   actions,
 };
