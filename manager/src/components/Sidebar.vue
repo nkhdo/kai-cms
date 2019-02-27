@@ -5,7 +5,7 @@
     </div>
     <div class="kd-sidebar-body">
       <vs-collapse type="margin">
-        <vs-collapse-item>
+        <vs-collapse-item class="kd-section">
           <div slot="header" class="kd-section-header">
             <vs-icon icon="folder"/> Models
           </div>
@@ -18,7 +18,7 @@
             {{model.name}}
           </router-link>
         </vs-collapse-item>
-        <vs-collapse-item>
+        <vs-collapse-item class="kd-section">
           <div slot="header" class="kd-section-header">
             <vs-icon icon="note"/> Records
           </div>
@@ -46,6 +46,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #f5f7fb;
   &-header {
     padding: 5px 10px;
     font-weight: 600;
@@ -54,16 +55,19 @@ export default {
   &-body {
     flex: 1;
     overflow: auto;
-    .kd-section-header {
-      font-weight: 600;
-    }
-    .kd-section-item {
-      padding: 5px 10px;
-      &:hover {
-        background-color: #fbfbfb;
-      }
-      &.router-link-active {
+    .kd-section {
+      background-color: white;
+      &-header {
         font-weight: 600;
+      }
+      &-item {
+        padding: 5px 10px;
+        &:hover {
+          background-color: #fbfbfb;
+        }
+        &.router-link-active {
+          font-weight: 600;
+        }
       }
     }
   }
