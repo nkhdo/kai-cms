@@ -3,6 +3,7 @@ const fastify = require('fastify')({ logger: true });
 const { MongoClient } = require('mongodb');
 fastify.register(require('fastify-helmet'));
 fastify.register(require('fastify-sensible'));
+fastify.register(require('fastify-cors'), { origin: '*' });
 const mongoPlugin = require('./plugins/mongo');
 const kaiPlugin = require('./plugins/kai');
 const apiRoutesGenerator = require('./services/api_routes_generator');
