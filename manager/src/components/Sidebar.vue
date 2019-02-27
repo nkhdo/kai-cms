@@ -18,12 +18,6 @@
             {{model.name}}
           </router-link>
         </vs-collapse-item>
-        <vs-collapse-item class="kd-section">
-          <div slot="header" class="kd-section-header">
-            <vs-icon icon="note"/> Records
-          </div>
-          Hihi
-        </vs-collapse-item>
       </vs-collapse>
     </div>
   </div>
