@@ -1,7 +1,7 @@
 const fastifyPlugin = require('fastify-plugin');
 
 const setupIndexes = (db) => {
-  db.collection('models').createIndex({ slug: 1 }, { unique: true });
+  db.collection('models').createIndex({ slug: 1 }, { unique: true, background: true });
 };
 
 const mongoPlugin = (fastify, opts, next) => {

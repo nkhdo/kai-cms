@@ -6,7 +6,6 @@ module.exports = {
   slug: {
     type: 'string',
     required: true,
-    unique: true,
     blacklist: ['_models'],
   },
   description: {
@@ -16,5 +15,9 @@ module.exports = {
   schema: {
     type: 'object',
     required: true,
+  },
+  indexes: {
+    type: 'object', // array
+    defaultValue: [],
   },
 };

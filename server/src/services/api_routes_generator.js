@@ -1,6 +1,20 @@
-const generateModelRoutes = ({ name, slug, schema }) => async (fastify, opts, next) => {
+const _ = require('lodash');
+
+const generateModelRoutes = ({
+  name, slug, schema, indexes,
+}) => async (fastify, opts, next) => {
   fastify.log.info(`Registering routes for ${name}`);
   const collection = fastify.db.collection(slug);
+  _.forEach(indexes, (index) => {
+    fastify.log.info('--> create index if not exist: ', indexes);
+    const { fields, options = {} } = index;
+    if (fields) {
+      collection.createIndex(fields, {
+        ...options,
+        background: true,
+      });
+    }
+  });
   fastify.get('/', async () => {
     const recordsCursor = await collection.find();
     return recordsCursor.toArray();
