@@ -20,7 +20,7 @@
       <template slot-scope="{data}">
         <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
           <vs-td :data="data[indextr].field">
-            {{data[indextr].field}}
+            <b>{{data[indextr].field}}</b>
           </vs-td>
           <vs-td :data="data[indextr].type">
             {{data[indextr].type}}
@@ -61,6 +61,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import _ from 'lodash';
 
 export default {
   name: 'ModelDetails',
